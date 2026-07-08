@@ -1,3 +1,7 @@
 export default function RestaurantListPage() {
-  return <h2>RestaurantListPage</h2>;
+  return (
+    <div>
+      <h2>Restaurant List Page</h2>
+    </div>
+  );
 }
