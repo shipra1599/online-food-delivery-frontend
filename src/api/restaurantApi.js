@@ -1,8 +1,10 @@
-import axiosClient from "./axiosClient";
+import axios from "axios";
 
-const restaurantApi = {
-  getAll: () => axiosClient.get("/restaurants"),
-  getById: (id) => axiosClient.get(`/restaurants/${id}`),
+const restaurantApi = axios.create({
+  baseURL: "http://localhost:8081",
+});
+
+export default {
+  getAll: () => restaurantApi.get("/restaurants"),
+  getById: (id) => restaurantApi.get(`/restaurants/${id}`)
 };
-
-export default restaurantApi;

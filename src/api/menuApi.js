@@ -1,8 +1,10 @@
-import axiosClient from "./axiosClient";
+import axios from "axios";
 
-const menuApi = {
+const menuApi = axios.create({
+  baseURL: "http://localhost:8082",
+});
+
+export default {
   getMenuByRestaurant: (restaurantId) =>
-    axiosClient.get(`/restaurants/${restaurantId}/menu`),
+    menuApi.get(`/menu/restaurant/${restaurantId}`)
 };
-
-export default menuApi;
